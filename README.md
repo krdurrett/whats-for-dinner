@@ -20,12 +20,12 @@
 
 ## Instructions for running and viewing the project
 
-  Our project can be accessed using GitHub pages. See link below!
-  Click around the site to see randomly generated Romance Novel covers, save your favorite covers, you can even make your own cover!
-
+  My project can be accessed using GitHub pages. See link below!
+  Click around the site to choose a random meal option, save your favorite meals, and even add your own meals!
+  
 ## Deploy link (gh-pages)
 
-  https://krdurrett.github.io/romcom/
+  https://krdurrett.github.io/whats-for-dinner/  
   
 ## Example user generated cover:
 
