@@ -45,14 +45,15 @@
 
 ## Future Additions
 
- - Implement data validation and error handling into the form
- - When a user single clicks a saved cover, create a modal to view it larger
- - Use of flexbox in the CSS to accomodate for various image file sizes
+ - Add login-in page.
+ - Create an 'All-recipe' page where user can view all available recipes sorted by type, and be able to add/edit/delete those recipes.
+ - Utilize local storage, so that the user’s favorite recipes will persist on page reload.
 
-## Team wins 
+## Wins 
 
-- Collaborated and communicated towards each others learning styles and personal needs
-- Expanded knowledge of inner workings of the DOM by manipulating HTML and CSS elements using Javascript
-- Time management
-- Created methods for user interaction and customization
-- Honored and upheld our team DTR 
+- Learned how to utilize CSS to create styling on a page, particularly flexbox.
+- Learned how to structure a page using HTML.
+- Expanded knowledge of inner workings of the DOM by manipulating HTML and CSS elements using Javascript.
+- Ability to continue working past my expected CYOA extensions. 
+- Created methods for user interaction and customization.
+
