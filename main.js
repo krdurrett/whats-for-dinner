@@ -143,16 +143,17 @@ function deleteRecipe() {
 
 function showAddRecipeForm() {
   addRecipeView.classList.remove('hidden');
-}
+};
 
 function displayNewRecipe() {
   event.preventDefault();
+  formView.classList.remove('hidden');
   favoritesView.classList.add('hidden');
   cookPotView.classList.add('hidden');
   resultsView.classList.remove('hidden');
   addRecipeView.classList.add('hidden');
   addNewRecipe();
-}
+};
 
 function addNewRecipe () {
   if (userRecipeType.value === "side") {
@@ -167,4 +168,4 @@ function addNewRecipe () {
   } else {
     recipeResult.innerText = `Sorry, ${userRecipeType.value} isn't available.`
   }
-}
+};
