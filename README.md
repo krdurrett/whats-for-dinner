@@ -27,9 +27,21 @@
 
   https://krdurrett.github.io/whats-for-dinner/  
   
-## Example user generated cover:
+## Main Screen View:
 
-![Screen Shot 2021-10-24 at 10 10 44 AM](https://user-images.githubusercontent.com/88299275/138602703-c28e8149-67f3-4091-8cc8-336b13184292.png)
+![Screen Shot 2021-10-31 at 11 13 33 AM](https://user-images.githubusercontent.com/88299275/139595700-8ee00572-43d5-4fe0-8aee-a83abf5d9e40.png)
+
+## Recipe Results View:
+
+![Screen Shot 2021-10-31 at 11 46 55 AM](https://user-images.githubusercontent.com/88299275/139595730-37a62f26-7f50-4bba-b890-4aba17e1e59f.png)
+
+## Favorites View:
+
+![Screen Shot 2021-10-31 at 11 16 10 AM](https://user-images.githubusercontent.com/88299275/139595746-b456ea1e-c06d-4ede-a087-512581b0a786.png)
+
+## Add Recipe View:
+
+![Screen Shot 2021-10-31 at 11 47 46 AM](https://user-images.githubusercontent.com/88299275/139595758-58302e49-ebe8-4247-ba2c-e069415b3284.png)
 
 ## Future Additions
 
