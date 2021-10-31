@@ -1,23 +1,46 @@
 # What's for Dinner?
 
-## Overview
+## Contributors 
 
-What's for dinner? The ultimate question. You will be building an app that helps users choose a recipe and put together meals. 
+  - Kayla Durrett [GitHub](https://github.com/krdurrett)
+  
+## Project specs
 
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
+  - What's for dinner? The ultimate question. I built an app that helps users choose a recipe and put together meals. 
+  - Instructions and Rubric for this project can be found [HERE.](https://frontend.turing.edu/projects/module-1/dinner.html)
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/dinner.html). 
+## Technologies used
 
-## Learning Goals
+  - JavaScript 
+  - HTML
+  - CSS
+  - Atom
+  - git
+  - GitHub
 
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
+## Instructions for running and viewing the project
 
-## Setup
+  My project can be accessed using GitHub pages. See link below!
+  Click around the site to choose a random meal option, save your favorite meals, and even add your own meals!
+  
+## Deploy link (gh-pages)
 
-- Fork this project to your own Github account
-- Clone the repository to your local machine
-- `cd` into the project
-- Read this README thoroughly, then begin working!
+  https://krdurrett.github.io/whats-for-dinner/  
+  
+## Example user generated cover:
+
+![Screen Shot 2021-10-24 at 10 10 44 AM](https://user-images.githubusercontent.com/88299275/138602703-c28e8149-67f3-4091-8cc8-336b13184292.png)
+
+## Future Additions
+
+ - Implement data validation and error handling into the form
+ - When a user single clicks a saved cover, create a modal to view it larger
+ - Use of flexbox in the CSS to accomodate for various image file sizes
+
+## Team wins 
+
+- Collaborated and communicated towards each others learning styles and personal needs
+- Expanded knowledge of inner workings of the DOM by manipulating HTML and CSS elements using Javascript
+- Time management
+- Created methods for user interaction and customization
+- Honored and upheld our team DTR 
