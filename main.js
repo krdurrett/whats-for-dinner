@@ -46,6 +46,8 @@ var desserts = [
   "Eclairs"
 ];
 
+var favoriteRecipies = [];
+
 var letsCookButton = document.querySelector('.lets-cook-button');
 var sideButton = document.querySelector('#side');
 var mainDishButton = document.querySelector('#maindish');
@@ -67,7 +69,108 @@ var addNewRecipeButton = document.querySelector('.add-new-recipe-button');
 var userRecipeType = document.querySelector('.user-recipe-type');
 var userRecipeName = document.querySelector('.user-recipe-name');
 
-var favoriteRecipies = [];
+
+
+let getRandomIndex = array => {
+  var randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+}
+
+let chooseRecipe = () => {
+  switch(true) {
+    case sideButton.checked:
+      recipeResult.innerText = getRandomIndex(sides);
+      break;
+    case mainDishButton.checked:
+      recipeResult.innerText = getRandomIndex(mains);
+      break;
+    case dessertButton.checked:
+      recipeResult.innerText = getRandomIndex(desserts);
+      break;
+    case entireMealButton.checked:
+      recipeResult.innerText = `${getRandomIndex(mains)} with a side of ${getRandomIndex(sides)} and ${getRandomIndex(desserts)} for dessert!`;
+      break;
+  }
+}
+
+let showRecipe = () => {
+  cookPotView.classList.add('hidden');
+  resultsView.classList.remove('hidden');
+  chooseRecipe();
+}
+
+let clearResultsView = () => {
+  cookPotView.classList.remove('hidden');
+  resultsView.classList.add('hidden');
+}
+
+let returnToMain = () => {
+  favoritesView.classList.add('hidden');
+  formView.classList.remove('hidden');
+  cookPotView.classList.remove('hidden');
+}
+
+let addFavoriteRecipe = () => {
+  if (favoriteRecipies.includes(recipeResult.innerText)) {
+    return favoriteRecipies
+  } else {
+  favoriteRecipies.push(recipeResult.innerText);
+  }
+}
+
+let showFavoriteRecipes = () => {
+  formView.classList.add('hidden');
+  resultsView.classList.add('hidden');
+  favoritesView.classList.remove('hidden');
+  cookPotView.classList.add('hidden');
+  favoriteRecipeList.innerHTML = ``;
+  favoriteRecipies.forEach(item => {
+    favoriteRecipeList.innerHTML += `
+      <div><button id="${item}" style="background-color: #95a5a6; color: white; border: 0; border-radius: 4px;">DELETE</button>${item}</div>`
+  })
+}
+
+let deleteRecipe = () => {
+  favoriteRecipies.forEach(item => {
+    if (event.target.id === `${item}`) {
+         favoriteRecipies.splice(favoriteRecipies.indexOf(item), 1);
+       }
+  })
+  showFavoriteRecipes();
+}
+
+let showAddRecipeForm = () => {
+  addRecipeView.classList.remove('hidden');
+}
+
+let displayNewRecipe = () => {
+  event.preventDefault();
+  formView.classList.remove('hidden');
+  favoritesView.classList.add('hidden');
+  cookPotView.classList.add('hidden');
+  resultsView.classList.remove('hidden');
+  addRecipeView.classList.add('hidden');
+  addNewRecipe();
+}
+
+let addNewRecipe = () => {
+  switch(true) {
+    case userRecipeType.value === "side":
+    sides.push(userRecipeName.value);
+    recipeResult.innerText = userRecipeName.value;
+    break;
+    case userRecipeType.value === "main dish":
+    mains.push(userRecipeName.value);
+    recipeResult.innerText = userRecipeName.value;
+    break;
+    case userRecipeType.value === "dessert":
+    desserts.push(userRecipeName.value);
+    recipeResult.innerText = userRecipeName.value;
+    break;
+    default:
+    recipeResult.innerText = `Sorry, ${userRecipeType.value} isn't available.`;
+  }
+}
 
 letsCookButton.addEventListener("click", showRecipe);
 clearResult.addEventListener("click", clearResultsView);
@@ -77,95 +180,3 @@ viewFavoritesButton.addEventListener("click", showFavoriteRecipes);
 favoriteRecipeList.addEventListener("click", deleteRecipe);
 addRecipeButton.addEventListener("click", showAddRecipeForm);
 addNewRecipeButton.addEventListener("click", displayNewRecipe);
-
-function getRandomIndex(array) {
-  var randomIndex = Math.floor(Math.random() * array.length);
-  return array[randomIndex];
-};
-
-function chooseRecipe() {
-  if (sideButton.checked) {
-    recipeResult.innerText = getRandomIndex(sides)
-  } else if (mainDishButton.checked) {
-    recipeResult.innerText = getRandomIndex(mains)
-  } else if (dessertButton.checked) {
-    recipeResult.innerText = getRandomIndex(desserts)
-  } else if (entireMealButton.checked) {
-    recipeResult.innerText = `${getRandomIndex(mains)} with a side of ${getRandomIndex(sides)} and ${getRandomIndex(desserts)} for dessert!`;
-  };
-};
-
-function showRecipe() {
-  cookPotView.classList.add('hidden');
-  resultsView.classList.remove('hidden');
-  chooseRecipe();
-};
-
-function clearResultsView() {
-  cookPotView.classList.remove('hidden');
-  resultsView.classList.add('hidden');
-};
-
-function returnToMain() {
-  favoritesView.classList.add('hidden');
-  formView.classList.remove('hidden');
-  cookPotView.classList.remove('hidden');
-};
-
-function addFavoriteRecipe() {
-  if (favoriteRecipies.includes(recipeResult.innerText)) {
-    return favoriteRecipies
-  } else {
-  favoriteRecipies.push(recipeResult.innerText);
-  };
-};
-
-function showFavoriteRecipes() {
-  formView.classList.add('hidden');
-  resultsView.classList.add('hidden');
-  favoritesView.classList.remove('hidden');
-  cookPotView.classList.add('hidden');
-  favoriteRecipeList.innerHTML = ``;
-  for (var i = 0; i < favoriteRecipies.length; i++) {
-    favoriteRecipeList.innerHTML += `
-      <div><button id="${favoriteRecipies[i]}" style="background-color: #95a5a6; color: white; border: 0; border-radius: 4px;">DELETE</button>${favoriteRecipies[i]}</div>`
-  };
-};
-
-function deleteRecipe() {
-  for(var i = 0; i < favoriteRecipies.length; i++) {
-    if (event.target.id === `${favoriteRecipies[i]}`) {
-      favoriteRecipies.splice(i, 1);
-    }
-  }
-  showFavoriteRecipes();
-};
-
-function showAddRecipeForm() {
-  addRecipeView.classList.remove('hidden');
-};
-
-function displayNewRecipe() {
-  event.preventDefault();
-  formView.classList.remove('hidden');
-  favoritesView.classList.add('hidden');
-  cookPotView.classList.add('hidden');
-  resultsView.classList.remove('hidden');
-  addRecipeView.classList.add('hidden');
-  addNewRecipe();
-};
-
-function addNewRecipe () {
-  if (userRecipeType.value === "side") {
-    sides.push(userRecipeName.value);
-    recipeResult.innerText = userRecipeName.value;
-  } else if (userRecipeType.value === "main dish") {
-    mains.push(userRecipeName.value);
-    recipeResult.innerText = userRecipeName.value;
-  } else if (userRecipeType.value === "dessert") {
-    desserts.push(userRecipeName.value);
-    recipeResult.innerText = userRecipeName.value;
-  } else {
-    recipeResult.innerText = `Sorry, ${userRecipeType.value} isn't available.`
-  }
-};
